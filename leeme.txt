@@ -1,0 +1,65 @@
+📦 CRUD Laravel - Gestión de Productos, Proveedores y Órdenes
+
+Este es un sistema CRUD hecho en Laravel para gestionar productos, proveedores y órdenes, con relaciones entre ellos y una interfaz amigable usando Blade y Bootstrap.
+
+🚀 Requisitos
+- PHP >= 8.1
+- Composer
+- MySQL
+- Laravel 10+ (proyecto compatible con Laravel 12)
+
+🔧 Instalación
+1. Clonar el repositorio:
+   git clone https://github.com/Vantas1412/CrudLaravel.git
+   cd CrudLaravel
+
+2. Instalar dependencias PHP:
+   composer install
+
+3. (Opcional) Si deseas generar nuevos CRUDs:
+   composer require ibex/crud-generator
+   php artisan vendor:publish --tag=crud
+
+4. Configurar entorno:
+   cp .env.example .env
+
+5. Generar clave de la app:
+   php artisan key:generate
+
+6. Configurar base de datos en .env:
+   (Crear la base de datos 'sistema' y configurar las variables DB_)
+
+7. Ejecutar migraciones:
+   php artisan migrate
+
+8. Iniciar el servidor local:
+   php artisan serve
+
+⚙️ Configuración del archivo .env (ejemplo):
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sistema
+DB_USERNAME=root
+DB_PASSWORD=
+
+🧩 Crear nuevas entidades
+- Crear modelo y migración:
+  php artisan make:model NombreEntidad -m
+
+- Editar la migración: database/migrations/xxxx_create_nombreentidad_table.php
+  (Agrega los campos necesarios)
+
+- Ejecutar migración:
+  php artisan migrate
+
+- Generar el CRUD automáticamente:
+  php artisan make:crud NombreEntidad
+
+🧭 Rutas CRUD
+1. Abre routes/web.php y agrega:
+   use App\Http\Controllers\NombreEntidadController;
+   Route::resource('nombreentidad', NombreEntidadController::class);
+
+2. Accede en el navegador:
+   http://127.0.0.1:8000/nombreentidad
