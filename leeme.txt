@@ -12,6 +12,8 @@ Este es un sistema CRUD hecho en Laravel para gestionar productos, proveedores y
 1. Clonar el repositorio:
    git clone https://github.com/Vantas1412/CrudLaravel.git
    cd CrudLaravel
+o Descargar y descomprimir los archivos del Github del enlace 
+https://github.com/Vantas1412/CrudLaravel.git
 
 2. Instalar dependencias PHP:
    composer install
